@@ -174,6 +174,13 @@ const handleClick = (e) => {
     
 }
 
+const preloadImages = () => {
+    urls.forEach( url => {
+        const img = new Image();
+        img.src = url;
+    })
+}
+
 
 const startNewGame = () => {
     clearBoard();
@@ -185,5 +192,5 @@ const startNewGame = () => {
 
 
 newGame.addEventListener('click', startNewGame);
-
+preloadImages();
 startNewGame();
