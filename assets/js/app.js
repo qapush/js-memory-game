@@ -26,12 +26,12 @@ const game = document.querySelector('#game');
 const urls = [
     `${baseUrl}c1.jpg`,
     `${baseUrl}c2.jpg`,
-     `${baseUrl}c3.jpg`,
-     `${baseUrl}c4.jpg`,
-     `${baseUrl}c5.jpg`,
-     `${baseUrl}c6.jpg`,
-     `${baseUrl}c7.jpg`,
-     `${baseUrl}c8.jpg`,
+    `${baseUrl}c3.jpg`,
+    `${baseUrl}c4.jpg`,
+    `${baseUrl}c5.jpg`,
+    `${baseUrl}c6.jpg`,
+    `${baseUrl}c7.jpg`,
+    `${baseUrl}c8.jpg`,
 ]
 const images = [...urls, ...urls];
 let selectedCards = [];
@@ -106,8 +106,8 @@ const pauseHide = () => {
             cards[item.cardIndex].src = baseUrl + 'pattern.jpg';
         })
         selectedCards = [];
-        cards.forEach(card => {
-            if(!cardsMatched.some( el => el === card.cardIndex)){
+        cards.forEach((card, index) => {
+            if(!cardsMatched.some( el => el === index )){
                 card.addEventListener('click', handleClick);
             }
         })
